@@ -31,22 +31,6 @@ exports[`<Navbar /> should render with default props 1`] = `
       }
       pad="none"
       responsive={false}>
-      <Anchor
-        className="active"
-        href="#"
-        tag="a">
-        First
-      </Anchor>
-      <Anchor
-        href="#"
-        tag="a">
-        Second
-      </Anchor>
-      <Anchor
-        href="#"
-        tag="a">
-        Third
-      </Anchor>
       <Search
         align="left"
         dropAlign={
@@ -57,6 +41,11 @@ exports[`<Navbar /> should render with default props 1`] = `
         iconAlign="end"
         inline={false}
         responsive={true} />
+      <IndexLink
+        activeClassname="active"
+        to="/">
+        Home
+      </IndexLink>
     </Menu>
   </Header>
 </div>

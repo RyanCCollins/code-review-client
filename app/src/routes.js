@@ -13,7 +13,8 @@ const RouterApp = (props) => (
       onUpdate={() => window.scrollTo(0, 0)} // eslint-disable-line
     >
       <Route path="/" component={App}>
-        <IndexRoute component={Pages.LandingPage} />
+        <IndexRoute path="/" component={Pages.LandingPage} />
+        <Route path="/projects/:project_slug" component={Pages.SingleProjectPage} />
         <Route path="*" component={Pages.NotFoundPage} />
       </Route>
     </Router>
