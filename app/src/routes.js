@@ -1,14 +1,13 @@
 import React from 'react';
 import { Router, Route, IndexRoute } from 'react-router';
-import { Provider } from 'react-redux';
 import store, { history } from './store';
-/* eslint-disable */
+import { ApolloProvider } from 'react-apollo';
+import client from './apolloClient';
 import App from 'components/App';
 import * as Pages from 'pages';
-/* eslint-enable */
 
-const routes = (
-  <Provider store={store}>
+const RouterApp = (props) => (
+  <ApolloProvider {...props} client={client} store={store}>
     <Router
       history={history} // Scroll to top on route transitions
       onUpdate={() => window.scrollTo(0, 0)} // eslint-disable-line
@@ -18,7 +17,7 @@ const routes = (
         <Route path="*" component={Pages.NotFoundPage} />
       </Route>
     </Router>
-  </Provider>
+  </ApolloProvider>
 );
 
-export default routes;
+export default RouterApp;
