@@ -6,12 +6,13 @@ import Paragraph from 'grommet/components/Paragraph';
 import Footer from 'grommet/components/Footer';
 import ChatIcon from 'grommet/components/icons/base/Chat';
 import { Link } from 'react-router';
+import { CardItem, UserInfo } from 'components';
 
 const FeedItem = ({
   project,
 }) => (
-  <div className={styles.feedItem}>
-    <Heading>
+  <CardItem>
+    <Heading tag="h3">
       {project.title}
     </Heading>
     <Paragraph>
@@ -24,19 +25,9 @@ const FeedItem = ({
           {project.comments.length}
         </Link>
       </span>
-      <div className={styles.user}>
-        <img
-          src={project.user.avatar}
-          className={styles.avatarImg}
-          alt={`${project.user.name} avatar`}
-        />
-        {project.user.name}
-      <span>
-        {project.user.avatar}
-      </span>
-      </div>
+      <UserInfo user={project.user} />
     </Footer>
-  </div>
+  </CardItem>
 );
 
 FeedItem.propTypes = {

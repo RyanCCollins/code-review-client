@@ -5,22 +5,11 @@
   border-radius: 1px;
   border: 1px solid #E0E0E0;
   box-shadow: 0 1px 2px #E0E0E0;
+  max-width: 610px;
 }
 
 .commentLinks {
   font-size: 16px;
   padding: 7px 8px;
   color: #9E9E9E;
-}
-
-.avatarImg {
-  display: block;
-  width: 40px;
-  height: 40px;
-  background: #ECEFF1;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
-  border-radius: 100%;
-  overflow: hidden;
-  position: relative;
 }

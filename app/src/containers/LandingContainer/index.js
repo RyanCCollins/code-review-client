@@ -24,7 +24,7 @@ class LandingContainer extends Component { // eslint-disable-line react/prefer-s
         :
           <Section>
             <Heading align="center">
-              Welcome
+              Project Feed
             </Heading>
             <Box align="center" pad={{ horizontal: 'large', vertical: 'large' }}>
               {projectsFeed.map((item, i) =>
