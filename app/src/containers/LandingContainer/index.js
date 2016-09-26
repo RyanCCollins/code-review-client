@@ -74,6 +74,7 @@ query getProjects($limit:Int){
     user {
       id
       bio
+      avatar
       name
     }
   }

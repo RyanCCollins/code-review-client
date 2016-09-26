@@ -12,3 +12,15 @@
   padding: 7px 8px;
   color: #9E9E9E;
 }
+
+.avatarImg {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: #ECEFF1;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  overflow: hidden;
+  position: relative;
+}

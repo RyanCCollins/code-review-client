@@ -24,6 +24,17 @@ const FeedItem = ({
           {project.comments.length}
         </Link>
       </span>
+      <div className={styles.user}>
+        <img
+          src={project.user.avatar}
+          className={styles.avatarImg}
+          alt={`${project.user.name} avatar`}
+        />
+        {project.user.name}
+      <span>
+        {project.user.avatar}
+      </span>
+      </div>
     </Footer>
   </div>
 );
