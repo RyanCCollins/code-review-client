@@ -7,13 +7,23 @@ import styles from './index.module.scss';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import { LoadingIndicator, CardItem, UserInfo } from 'components';
+import { AddCommentContainer } from 'containers';
 import Section from 'grommet/components/Section';
 import Heading from 'grommet/components/Heading';
 import Box from 'grommet/components/Box';
 import Footer from 'grommet/components/Footer';
 import Paragraph from 'grommet/components/Paragraph';
+import Markdown from 'grommet/components/Markdown';
+import moment from 'moment';
 
 class SingleProject extends Component { // eslint-disable-line react/prefer-stateless-function
+  constructor(props) {
+    super(props);
+    this.handleSubmission = this.handleSubmission.bind(this);
+  }
+  handleSubmission(value) {
+    console.log(`Called handle submission callback with ${JSON.stringify(value, null)}`)
+  }
   render() {
     const {
       loading,
@@ -36,20 +46,48 @@ class SingleProject extends Component { // eslint-disable-line react/prefer-stat
                 <Paragraph>
                   {singleProject.description}
                 </Paragraph>
+                <Markdown content={singleProject.body} />
               </CardItem>
             </Box>
             <Box
               align="center"
               pad={{ horizontal: 'large', vertical: 'large' }}
             >
-              {singleProject.comments.map((comment, i) =>
+              <AddCommentContainer
+                singleProject={singleProject}
+              />
+            </Box>
+            <Box
+              align="center"
+              pad={{ horizontal: 'large', vertical: 'large' }}
+            >
+              {singleProject.comments
+                .sort((a, b) => new Date(b.created) - new Date(a.created))
+                .map((comment, i) =>
                 <CardItem key={i}>
-                  <Paragraph>
-                    {comment.body}
-                  </Paragraph>
-                  <Footer>
-                    <UserInfo user={comment.user} />
-                  </Footer>
+                  <Box
+                    align="start"
+                    pad={{ horizontal: 'medium', vertical: 'medium' }}
+                    className={styles.commentBox}
+                  >
+                    <Markdown content={comment.body} />
+                    <Footer
+                      justify="end"
+                      align="end"
+                      wrap={false}
+                    >
+                      <Box
+                        direction="column"
+                        justify="start"
+                        align="center"
+                      >
+                        <UserInfo user={comment.user} />
+                        <span>
+                          {moment(comment.created).calendar()}
+                        </span>
+                      </Box>
+                    </Footer>
+                  </Box>
                 </CardItem>
               )}
             </Box>
@@ -89,9 +127,11 @@ query getProjectBySlug($slug: String!) {
     description
     url
     slug
+    body
     comments {
       id
       body
+      created: created_at
       user {
         name
         bio

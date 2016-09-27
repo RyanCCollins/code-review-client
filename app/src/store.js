@@ -6,9 +6,11 @@ import createLogger from 'redux-logger';
 import rootReducer from './reducers';
 import client from './apolloClient';
 import { initialState as landingContainer } from './containers/LandingContainer/reducer';
+import { initialState as addCommentContainer } from './containers/LandingContainer/reducer';
 
 const initialState = {
   landingContainer,
+  addCommentContainer,
 };
 
 const isClient = typeof document !== 'undefined';

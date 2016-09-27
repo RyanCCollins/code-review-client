@@ -1386,24 +1386,6 @@ img[height] {
     @media screen and (max-width: 63.9375em) {
       .grommetux-brick--2-2 {
         width: calc(100% - 12px); } }
-
-.grommet input[type="button"],
-.grommet input[type="submit"],
-.grommet button:not(.grommetux-button) {
-  padding: 6px 22px;
-  background-color: transparent;
-  border: 2px solid #8C50FF;
-  border-radius: 4px;
-  color: #333;
-  font-size: 19px;
-  font-size: 1.1875rem;
-  line-height: 24px;
-  font-weight: 600;
-  cursor: pointer;
-  text-align: center;
-  outline: none;
-  min-width: 120px;
-  max-width: 384px; }
   .grommet input[type="button"]:focus:not(.grommetux-button--disabled),
   .grommet input[type="submit"]:focus:not(.grommetux-button--disabled),
   .grommet button:not(.grommetux-button):focus:not(.grommetux-button--disabled) {

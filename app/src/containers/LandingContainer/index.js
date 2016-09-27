@@ -58,7 +58,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 const Container = cssModules(LandingContainer, styles);
 
-const ITEMS_PER_PAGE = 10;
+const ITEMS_PER_PAGE = 20;
 const PROJECT_FEED_QUERY = gql`
 query getProjects($limit:Int){
   projectsFeed(limit:$limit) {
