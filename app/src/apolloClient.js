@@ -2,7 +2,7 @@ import ApolloClient, {
   createNetworkInterface,
   addTypeName,
 } from 'apollo-client';
-const baseUrl = process.env.BASE_URL || 'http://localhost:3000/';
+const baseUrl = 'https://code-reviewer-api.herokuapp.com/';
 const url = `${baseUrl}api`;
 
 const client = new ApolloClient({
