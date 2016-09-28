@@ -1,0 +1,8 @@
+exports[`<AuthFormFooter /> should render with default props 1`] = `
+<Footer
+  direction="row"
+  responsive={false}>
+  <Anchor
+    tag="a" />
+</Footer>
+`;
