@@ -15,7 +15,9 @@ const RouterApp = (props) => (
       <Route path="/" component={App}>
         <IndexRoute path="/" component={Pages.LandingPage} />
         <Route path="/projects/:project_slug" component={Pages.SingleProjectPage} />
-        <Route path="*" component={Pages.NotFoundPage} />
+        <Route path="/login" component={Pages.LoginPage} />
+          <Route path="/signup" component={Pages.SignupPage} />
+          <Route path="*" component={Pages.NotFoundPage} />
       </Route>
     </Router>
   </ApolloProvider>
