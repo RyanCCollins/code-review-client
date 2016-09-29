@@ -6,7 +6,12 @@ import React from 'react';
 describe('<UserInfo />', () => {
   it('should render with default props', () => {
     const wrapper = shallow(
-      <UserInfo />
+      <UserInfo
+        user={{
+          name: 'Ryan Collins',
+          avatar: 'https://ryancollins.io/avatar.png',
+        }}
+      />
     );
     expect(shallowToJson(wrapper)).toMatchSnapshot();
   });

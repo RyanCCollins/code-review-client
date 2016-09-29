@@ -6,7 +6,11 @@ import React from 'react';
 describe('<CardItem />', () => {
   it('should render with default props', () => {
     const wrapper = shallow(
-      <CardItem />
+      <CardItem>
+        <div>
+          Hello World
+        </div>
+      </CardItem>
     );
     expect(shallowToJson(wrapper)).toMatchSnapshot();
   });

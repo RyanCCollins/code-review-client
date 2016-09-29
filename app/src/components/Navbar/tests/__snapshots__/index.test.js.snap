@@ -15,9 +15,14 @@ exports[`<Navbar /> should render with default props 1`] = `
     tag="header">
     <Title
       responsive={true}>
-      <img
-        alt="logo"
-        src={Object {}} />
+      <Link
+        onlyActiveOnIndex={false}
+        style={Object {}}
+        to="/">
+        <img
+          alt="logo"
+          src={Object {}} />
+      </Link>
     </Title>
     <Menu
       align="center"
@@ -46,6 +51,20 @@ exports[`<Navbar /> should render with default props 1`] = `
         to="/">
         Home
       </IndexLink>
+      <Link
+        activeClassname="active"
+        onlyActiveOnIndex={false}
+        style={Object {}}
+        to="login">
+        Login
+      </Link>
+      <Link
+        activeClassname="active"
+        onlyActiveOnIndex={false}
+        style={Object {}}
+        to="signup">
+        Signup
+      </Link>
     </Menu>
   </Header>
 </div>

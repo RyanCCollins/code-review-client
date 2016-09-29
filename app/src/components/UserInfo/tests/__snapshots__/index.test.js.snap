@@ -1,0 +1,10 @@
+exports[`<UserInfo /> should render with default props 1`] = `
+<div>
+  <img
+    alt="Ryan Collins avatar"
+    src="https://ryancollins.io/avatar.png" />
+  <div>
+    Ryan Collins
+  </div>
+</div>
+`;

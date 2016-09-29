@@ -1,7 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as AddCommentActionCreators from './actions';
 import cssModules from 'react-css-modules';
 import styles from './index.module.scss';
 import RichTextEditor from 'react-rte';
@@ -60,19 +57,6 @@ AddCommentContainer.propTypes = {
   submitComment: PropTypes.func.isRequired,
 };
 
-// mapStateToProps :: {State} -> {Props}
-const mapStateToProps = (state) => ({
-  editorState: state.addCommentContainer.editorState,
-});
-
-// mapDispatchToProps :: Dispatch -> {Action}
-const mapDispatchToProps = (dispatch) => ({
-  actions: bindActionCreators(
-    AddCommentActionCreators,
-    dispatch
-  ),
-});
-
 const Container = cssModules(AddCommentContainer, styles);
 
 const SUBMIT_COMMENT = gql`
@@ -116,7 +100,4 @@ const ContainerWithMutations = graphql(SUBMIT_COMMENT, {
   }),
 })(Container);
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ContainerWithMutations);
+export default ContainerWithMutations;

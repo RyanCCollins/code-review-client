@@ -7,8 +7,6 @@ export const initialState = {
 const loginReducer =
   (state = initialState, action) => {
     switch (action.type) {
-      case types.DEFAULT_ACTION:
-        return state;
       default:
         return state;
     }

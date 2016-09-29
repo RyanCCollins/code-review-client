@@ -1,6 +1,7 @@
-exports[`<Landing /> should render with default props 1`] = `
-<Apollo(LandingContainer)
+exports[`<Login /> should render with default props 1`] = `
+<Login
   actions={Object {}}
+  errors={Array []}
   store={
     Object {
       "clearActions": [Function clearActions],

@@ -1,1 +1,7 @@
-exports[`<CardItem /> should render with default props 1`] = `<div />`;
+exports[`<CardItem /> should render with default props 1`] = `
+<div>
+  <div>
+    Hello World
+  </div>
+</div>
+`;
